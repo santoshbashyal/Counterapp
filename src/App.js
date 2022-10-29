@@ -1,24 +1,24 @@
 import logo from './logo.svg';
+import React,{useState} from 'react';
 import './App.css';
 
-function App() {
+
+const App=() =>{
+  const[number, setNumber]= useState(0)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+
+   <h1>Counter App </h1>
+   <h2>{number}</h2>
+   <button 
+   onClick={()=> setNumber(number+1)} className='Button'>add</button>
+   <button
+    onClick={()=> setNumber(number-1)} className='Button'>down</button>
+   <button 
+   onClick={()=> setNumber(0)}className='Button'>reset</button>  
+  
     </div>
+   
   );
 }
 
